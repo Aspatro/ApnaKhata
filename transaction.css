@@ -1,0 +1,374 @@
+/* --- Header --- */
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-dark);
+}
+
+.back-link {
+  color: white;
+  text-decoration: none;
+}
+
+.header-title-container {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 17px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.menu-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* --- Balance Section --- */
+.balance-section {
+  text-align: center;
+  padding: 24px 24px 10px;
+}
+
+.balance-amount {
+  font-size: 36px;
+  margin: 0;
+}
+
+.balance-subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.due-badge {
+  background: rgba(255, 69, 58, 0.15);
+  color: #ff453a;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+/* --- Quick Action Boxes --- */
+.action-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+}
+
+.action-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  transition: 0.2s;
+}
+
+.action-box:active {
+  transform: scale(0.95);
+}
+
+.action-box .icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.action-box span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.icon-whatsapp {
+  background: rgba(76, 217, 100, 0.15);
+  color: #4cd964;
+}
+
+.icon-pdf {
+  background: rgba(0, 122, 255, 0.15);
+  color: #007aff;
+}
+
+/* --- Transaction List --- */
+.tx-card {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 16px;
+  border-radius: 16px;
+  margin: 0 16px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.tx-date {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.tx-desc {
+  margin: 4px 0 0;
+  font-weight: 600;
+  color: white;
+}
+
+.tx-amount {
+  margin: 0;
+  font-weight: 700;
+}
+
+/* --- Dropdown & Modals --- */
+#dropdownMenu {
+  display: none;
+  position: absolute;
+  right: 16px;
+  top: 50px;
+  background: #1c271f;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  width: 195px;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.menu-item {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--bg-dark);
+  width: 90%;
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.modal-header-text {
+  margin-top: 0;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* --- Action Sheets --- */
+.action-sheet {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000;
+  align-items: flex-end;
+}
+
+.sheet-content {
+  background: #1c271f;
+  width: 100%;
+  padding: 20px;
+  border-radius: 24px 24px 0 0;
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  margin: 0 auto 20px;
+}
+
+.sheet-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+/* --- Skeleton Shimmer --- */
+#main-content {
+  display: none;
+}
+
+.skeleton {
+  background: #1c271f;
+  background: linear-gradient(110deg, #1c271f 8%, #253328 18%, #1c271f 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.skeleton-balance-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 24px 10px;
+}
+
+.skeleton-bal-amt {
+  width: 140px;
+  height: 44px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
+
+.skeleton-bal-sub {
+  width: 80px;
+  height: 14px;
+  margin-bottom: 10px;
+}
+
+.skeleton-badge {
+  width: 160px;
+  height: 28px;
+  border-radius: 20px;
+}
+
+.skeleton-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+}
+
+.skeleton-action-box {
+  height: 105px;
+  border-radius: 16px;
+}
+
+.skeleton-tx-list {
+  padding: 0 16px;
+}
+
+.skeleton-tx-card {
+  height: 72px;
+  margin-bottom: 12px;
+  border-radius: 16px;
+}
+
+/* --- Footer & Buttons --- */
+.sticky-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 12px;
+  padding: 16px 16px 24px;
+  background-color: var(--bg-dark);
+  border-top: 1px solid var(--border);
+  z-index: 999;
+}
+
+.footer-btn {
+  flex: 1;
+  height: 54px;
+  border-radius: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-gave {
+  color: #ff5252;
+  border: 2px solid #ff5252;
+  background: transparent;
+}
+
+.btn-got {
+  background: var(--primary);
+  color: #102216;
+  border: none;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+}
+
+.btn-update {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--primary);
+  border: none;
+  color: #102216;
+  font-weight: 700;
+}
+
+/* Utility classes */
+.text-success {
+  color: var(--primary);
+}
+
+.text-danger {
+  color: #ff453a;
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApnaKhata Ledger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#102216" />
+</head>
+<body>
+  <div class="app-frame">
+    <header>
+      <a href="profile.html" class="profile-link">
+        <div class="store-icon-wrapper">
+          <span class="material-symbols-outlined">store</span>
+        </div>
+        <div>
+          <h2 id="display-shop-name" class="shop-name">My Ledger</h2>
+          <span class="profile-sub">Owner Profile</span>
+        </div>
+      </a>
+      <button id="logoutBtn">
+        <span class="material-symbols-outlined">logout</span>
+      </button>
+    </header>
+    <div id="skeleton-loader">
+      <div class="skeleton-search-container">
+        <div class="skeleton skeleton-search-bar"></div>
+      </div>
+      <div class="skeleton-list">
+        <div class="skeleton-card" >
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+        <div class="skeleton-card">
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+        <div class="skeleton-card" >
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+        <div class="skeleton-card" >
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+        <div class="skeleton-card" >
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+        <div class="skeleton-card" >
+          <div class="skeleton skeleton-circle"></div>
+          <div style="flex-grow: 1">
+            <div class="skeleton skeleton-line skeleton-name"></div>
+            <div class="skeleton skeleton-line skeleton-sub"></div>
+          </div>
+          <div class="skeleton skeleton-line skeleton-price"></div>
+        </div>
+      </div>
+    </div>
+    <div id="main-content" class="content-scroll">
+      <div class="search-container">
+        <div class="search-inner">
+          <span class="material-symbols-outlined search-icon">search</span>
+          <input type="text" id="searchInput" class="input-field search-input" placeholder="Search customer name..." />
+        </div>
+      </div>
+      <div id="partyList" class="container-padding"></div>
+    </div>
+    <button id="openModalBtn">
+      <span class="material-symbols-outlined add-icon">person_add</span>
+    </button>
+    <div id="addModal" class="modal">
+      <div class="modal-content">
+        <h2 class="modal-title">Add New Customer</h2>
+        <form id="addPartyForm" class="modal-form">
+          <div>
+            <label class="form-group-label">Customer Name</label>
+            <input type="text" id="partyName" class="input-field" required />
+          </div>
+          <div>
+            <label class="form-group-label">Mobile Number</label>
+            <input type="tel" id="partyMobile" class="input-field" />
+          </div>
+          <div class="modal-actions">
+            <button type="button" id="closeModalBtn" class="btn-outline">
+              Cancel
+            </button>
+            <button type="submit" id="savePartyBtn" class="btn-main">
+              Create
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

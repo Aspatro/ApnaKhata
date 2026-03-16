@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Edit Profile - ApnaKhata</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#102216" />
+</head>
+
+<body>
+  <div class="app-frame">
+    <header class="profile-header">
+      <a href="dashboard.html" class="back-link">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <h1 class="profile-title">Edit Profile</h1>
+      <button id="logoutBtn" class="logout-button">
+        <span class="material-symbols-outlined">logout</span>
+      </button>
+    </header>
+
+    <div class="content-scroll">
+      <div class="profile-content-wrapper">
+        <div class="center-text">
+          <div class="avatar-circle">
+            <span class="material-symbols-outlined avatar-icon">storefront</span>
+          </div>
+          <p id="user-email-display" class="user-email"></p>
+        </div>
+
+        <form id="update-form" class="update-form">
+          <div>
+            <label class="form-label">Owner Name</label>
+            <input type="text" id="up-name" class="input-field" placeholder="Loading..." required />
+          </div>
+          <div>
+            <label class="form-label">Shop Name</label>
+            <input type="text" id="up-shop" class="input-field" placeholder="Loading..." required />
+          </div>
+          <div>
+            <label class="form-label">Mobile Number</label>
+            <input type="tel" id="up-mobile" class="input-field" placeholder="Loading..." />
+          </div>
+
+          <div class="save-btn-container">
+            <button type="submit" id="saveBtn" class="btn-main save-btn-full">
+              Save Profile
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="profile.js"></script>
+</body>
+
+</html>

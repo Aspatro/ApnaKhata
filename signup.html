@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApnaKhata Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="signup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#102216">
+</head>
+<body>
+  <div class="app-frame">
+    <div class="signup-header">
+      <a href="index.html" class="back-btn">
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <span class="help-link">Help</span>
+    </div>
+    <div class="content-scroll signup-container">
+      <h1 class="h1-large">Create <span class="primary-span">Account</span></h1>
+      <div class="form-wrapper">
+        <div class="input-group">
+          <label class="field-label">Your Name</label>
+          <input type="text" id="reg-name" class="input-field" placeholder="Enter Your Name">
+        </div>
+        <div class="input-group">
+          <label class="field-label">Shop Name</label>
+          <input type="text" id="reg-shop" class="input-field" placeholder="Enter shop name">
+        </div>
+        <div class="input-group">
+          <label class="field-label">Email Address</label>
+          <input type="email" id="reg-email" class="input-field" placeholder="name@example.com">
+        </div>
+        <div class="input-group">
+          <label class="field-label">Mobile Number</label>
+          <input type="tel" id="reg-mobile" class="input-field" placeholder="Enter mobile number">
+        </div>
+        <div class="input-group">
+          <label class="field-label">Password</label>
+          <input type="password" id="reg-password" class="input-field" placeholder="Min. 6 characters">
+        </div>
+        <div class="input-group">
+          <label class="field-label">Confirm Password</label>
+          <input type="password" id="reg-confirm" class="input-field" placeholder="Repeat password">
+        </div>
+        <button id="signupBtn" class="btn-main">Sign Up</button>
+      </div>
+      <p class="footer-text">
+        Already have an account? <a href="signin.html">Log In</a>
+      </p>
+    </div>
+  </div>
+  <script type="module" src="signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ApnaKhata Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="index-file.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#102216" />
+  <style>
+  
+
+  #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #102216; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+  }
+  .splash-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .splash-logo {
+    width: 192px; 
+    height: 192px;
+    background: transparent; 
+    object-fit: contain;
+    animation: pulse 0.9s infinite ease-in-out;
+
+  }
+  .loading-text {
+    margin-top: 45px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 900;
+    animation: fadeText 0.9s infinite ease-in-out;
+  }
+
+  /* Animations */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { transform: scale(0.95); opacity: 0.9; }
+    50% { transform: scale(1.05); opacity: 1; }
+  }
+
+  @keyframes fadeText {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+  </style>
+</head>
+<body>
+<div id="splash-screen">
+  <div class="splash-container">
+    <img src="icon.png" alt="ApnaKhata Logo" class="splash-logo">
+    <div class="loading-text">Loading</div>
+  </div>
+</div>
+
+  <div id="index-content" class="app-frame">
+    <div class="hero-banner">
+      <div class="hero-logo">
+        <span class="material-symbols-outlined icon-primary">account_balance_wallet</span>
+        <span class="logo-text">ApnaKhata</span>
+      </div>
+      <h1 class="h1-large">Manage your <span class="primary-text">business</span> finances in one place.</h1>
+    </div>
+
+    <div class="content-padding">
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="icon-box"><span class="material-symbols-outlined">trending_up</span></div>
+          <p class="feature-text">Track every penny</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon-box"><span class="material-symbols-outlined">notifications_active</span></div>
+          <p class="feature-text">Automated Reminders</p>
+        </div>
+        <div class="feature-item">
+          <div class="icon-box"><span class="material-symbols-outlined">lock</span></div>
+          <p class="feature-text">Safe & Secure</p>
+        </div>
+      </div>
+    </div>
+
+     <div class="bottom-actions">
+      <a href="signup.html" class="btn-main">Get Started</a>
+      <a href="signin.html" class="btn-outline btn-outline-margin">
+        Already have an account? <span class="primary-link">Log In</span>
+      </a>
+      <p class="legal-text">By continuing, you agree to our Terms of Service.</p>
+    </div>
+
+  <script type="module">
+    import { LedgerApp } from './app.js';
+
+    const splash = document.getElementById('splash-screen');
+    const content = document.getElementById('index-content');
+
+    // LedgerApp.initAuth handles the logic:
+    // If user is logged in: Redirects to dashboard.html immediately.
+    // If user is guest: Runs the callback below to reveal index content.
+    LedgerApp.initAuth(false, (user) => {
+        if (!user) {
+            // Smoothly fade out the splash video
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.display = 'none';
+                content.style.display = 'block';
+            }, 500);
+        }
+    });
+  </script>
+</body>
+</html>

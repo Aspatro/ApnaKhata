@@ -1,0 +1,152 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+.modal-content {
+  background: var(--bg-dark);
+  width: 90%;
+  max-width: 380px;
+  padding: 32px 24px;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  text-align: center;
+  position: relative;
+}
+.modal-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+.modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.modal-text {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+.btn-cancel,
+.btn-confirm {
+  flex: 1;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-cancel {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: white;
+}
+.btn-confirm {
+  background: var(--primary);
+  border: none;
+  color: #102216;
+  font-weight: 700;
+}
+#okBtn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  background: var(--primary);
+  border: none;
+  color: #102216;
+  font-weight: 700;
+  display: none;
+  cursor: pointer;
+}
+.header-nav {
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.back-btn {
+  color: white;
+  text-decoration: none;
+}
+.help-link {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+.login-container {
+  padding: 0 32px ;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+.label-style {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.forgot-pass-container {
+  text-align: right;
+}
+.forgot-link {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+.footer-signup {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.signup-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+.brand-footer {
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 54px;
+}
+
+.footer-tagline {
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.footer-subtext {
+  font-size: 12px;
+  color: var(--text-muted); /* Uses your #9db9a6 */
+  opacity: 0.8;
+}
+
+.heart-icon {
+  color: #ff453a; /* iOS-style vibrant red */
+  font-size: 14px;
+  display: inline-block;
+  /* Subtle animation to make it feel alive */
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  15% { transform: scale(1.2); }
+  30% { transform: scale(1); }
+}

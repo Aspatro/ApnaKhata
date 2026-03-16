@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Transaction History - ApnaKhata</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="transaction.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
+        rel="stylesheet" />
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#102216">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+<body>
+    <div class="app-frame">
+        <header class="app-header">
+            <a href="dashboard.html" class="back-link">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </a>
+            <div class="header-title-container">
+                <h1 id="party-name-title" class="header-title">Loading...</h1>
+            </div>
+            <button id="menuBtn" class="menu-btn">
+                <span class="material-symbols-outlined">more_vert</span>
+            </button>
+            <div id="dropdownMenu">
+                <div class="menu-item" id="editPartyBtn"><span class="material-symbols-outlined">edit</span> Edit Party
+                    Details</div>
+                <div class="menu-item" id="deletePartyBtn" class="text-danger"><span
+                        class="material-symbols-outlined">delete</span> Delete Party</div>
+            </div>
+        </header>
+        <div id="skeleton-loader">
+            <div class="skeleton-balance-area">
+                <div class="skeleton skeleton-bal-amt"></div>
+                <div class="skeleton skeleton-bal-sub"></div>
+                <div class="skeleton skeleton-badge"></div>
+            </div>
+            <div class="skeleton-actions">
+                <div class="skeleton skeleton-action-box"></div>
+                <div class="skeleton skeleton-action-box"></div>
+            </div>
+            <div class="skeleton-tx-list">
+                <div class="skeleton skeleton-tx-card"></div>
+                <div class="skeleton skeleton-tx-card"></div>
+            </div>
+        </div>
+        <div id="main-content" class="content-scroll">
+            <div class="balance-section">
+                <h2 id="balance-amt" class="balance-amount">₹0.00</h2>
+                <p id="balance-sub" class="balance-subtitle">Balance</p>
+                <div id="due-status-container"></div>
+            </div>
+            <div class="action-boxes">
+                <div class="action-box" id="whatsappReminder">
+                    <div class="icon-circle icon-whatsapp"><span class="material-symbols-outlined">chat_bubble</span>
+                    </div>
+                    <span>WhatsApp</span>
+                </div>
+                <div class="action-box" id="generateReport">
+                    <div class="icon-circle icon-pdf"><span class="material-symbols-outlined">description</span></div>
+                    <span>PDF Report</span>
+                </div>
+            </div>
+            <div id="tx-list-container"></div>
+        </div>
+        <div class="sticky-footer">
+            <button id="navGave" class="footer-btn btn-gave">YOU GAVE ₹</button>
+            <button id="navGot" class="footer-btn btn-got">YOU GOT ₹</button>
+        </div>
+    </div>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3 class="modal-header-text">Edit Customer</h3>
+            <form id="editPartyForm">
+                <input type="text" id="editName" placeholder="Customer Name" required>
+                <input type="tel" id="editMobile" placeholder="Mobile Number">
+                <div class="modal-actions">
+                    <button type="button" class="btn-cancel"
+                        onclick="document.getElementById('editModal').style.display='none'">Cancel</button>
+                    <button type="submit" class="btn-update">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="actionSheet" class="action-sheet" onclick="this.style.display='none'">
+        <div class="sheet-content" onclick="event.stopPropagation()">
+            <div class="sheet-handle"></div>
+            <div id="editBtnUI" class="sheet-item text-success"><span class="material-symbols-outlined">edit</span> Edit
+                Entry</div>
+            <div id="deleteBtnUI" class="sheet-item text-danger"><span class="material-symbols-outlined">delete</span>
+                Delete Entry</div>
+        </div>
+    </div>
+    <script type="module" src="transaction.js"></script>
+</body>
+</html>

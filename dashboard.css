@@ -1,0 +1,357 @@
+/* Modern Skeleton Shimmer Animation */
+.skeleton {
+  background: #1c271f;
+  background: linear-gradient(110deg, #1c271f 8%, #253328 18%, #1c271f 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+.skeleton-search-container {
+  padding: 16px;
+}
+
+.skeleton-search-bar {
+  height: 56px;
+  width: 100%;
+  border-radius: 16px;
+}
+
+.skeleton-list {
+  padding: 0 16px;
+  
+}
+
+.skeleton-card {
+  height: 64px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03)
+}
+
+.skeleton-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.skeleton-line {
+  height: 12px;
+  border-radius: 4px;
+  background: #253328;
+}
+
+.skeleton-name {
+  width: 40%;
+  margin-bottom: 8px;
+}
+
+.skeleton-sub {
+  width: 25%;
+}
+
+.skeleton-price {
+  width: 20%;
+  height: 16px;
+  margin-left: auto;
+}
+
+/* Empty State Styling */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.empty-state-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(19, 236, 91, 0.1);
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.empty-state-icon-span {
+  font-size: 40px;
+}
+
+.empty-state-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.empty-state-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.onboarding-guide {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed var(--border);
+  border-radius: 16px;
+  padding: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.guide-step {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.guide-step:last-child {
+  margin-bottom: 0;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: #102216;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-size: 13px;
+}
+
+#openModalBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  box-shadow: 0 6px 16px rgba(19, 236, 91, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: transform 0.2s ease;
+}
+
+#openModalBtn:active {
+  transform: scale(0.9);
+}
+
+.add-icon {
+  color: #102216;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: var(--bg-dark);
+  width: 90%;
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+/* Page Structure */
+header {
+  align-items: center;
+  padding: 16px;
+}
+
+.profile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.store-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  background: #1c271f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shop-name {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+#logoutBtn {
+  background: none;
+  border: none;
+  color: #ff453a;
+  cursor: pointer;
+}
+
+#main-content {
+  display: none;
+}
+
+.search-container {
+  padding: 16px;
+}
+
+.search-inner {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 10px;
+  color: var(--text-placeholder);
+}
+
+.search-input {
+  padding-left: 44px;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: var(--input-bg);
+  border-radius: 16px;
+  margin-bottom: 12px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--border);
+  transition: transform 0.1s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.initial-circle {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: #102216;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.party-name {
+  margin: 0;
+  font-weight: 600;
+}
+
+.party-mobile {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.item-right {
+  text-align: right;
+}
+
+.balance-text {
+  margin: 0;
+  font-weight: 700;
+}
+
+.time-text {
+  margin: 0;
+  font-size: 10px;
+}
+
+/* Modal Forms */
+.modal-title {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group-label {
+  display: block;
+  font-size: 12px;
+  margin-bottom: 4px;
+  color: var(--text-muted);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.modal-actions button {
+  flex: 1;
+}
+
+.container-padding {
+  padding: 0 24px;
+}

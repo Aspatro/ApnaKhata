@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Enter Amount - Digital Khata</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="add-entry.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
+    rel="stylesheet" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#102216" />
+</head>
+<body>
+  <div class="app-frame">
+    <div class="header">
+      <span class="material-symbols-outlined" onclick="history.back()" style="cursor: pointer">arrow_back</span>
+      <h1 id="page-title" style="font-size: 17px; margin: 0; font-weight: 700">
+        Add Entry
+      </h1>
+    </div>
+
+    <div class="content">
+      <div id="party-name-display" style="
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            width: 100%;
+          ">
+        Loading Customer...
+      </div>
+
+      <div id="type-label">Loading...</div>
+      <div id="amount-view" class="amount-display">
+        <input type="text" id="amount-input-field" class="amount-input-field" value="₹0" readonly />
+      </div>
+
+      <div class="input-row">
+        <input type="text" id="descInput" class="small-input" placeholder="Add a note..." />
+        <input type="date" id="dateInput" class="small-input" />
+      </div>
+    </div>
+
+    <div class="keypad">
+      <button class="key" onclick="press('1')">1</button>
+      <button class="key" onclick="press('2')">2</button>
+      <button class="key" onclick="press('3')">3</button>
+      <button class="key" onclick="press('4')">4</button>
+      <button class="key" onclick="press('5')">5</button>
+      <button class="key" onclick="press('6')">6</button>
+      <button class="key" onclick="press('7')">7</button>
+      <button class="key" onclick="press('8')">8</button>
+      <button class="key" onclick="press('9')">9</button>
+      <button class="key" onclick="press('.')">.</button>
+      <button class="key" onclick="press('0')">0</button>
+      <button class="key key-action" onclick="press('DEL')">
+        <span class="material-symbols-outlined">backspace</span>
+      </button>
+    </div>
+    <div class="footer">
+      <button id="saveBtn" class="save-btn">SAVE TRANSACTION</button>
+    </div>
+  </div>
+  <script type="module" src="add-entry.js"></script>
+</body>
+
+</html>
